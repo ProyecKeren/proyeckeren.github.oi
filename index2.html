@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Temporizador</title>
+</head>
+<body>
+ <input type="number" id="tiempoElegido">
+ <!--usamos number solo para recibir numeros de entrada-->
+ <button onclick="comenzarTiempo()">Alarma</button>
+ <h1 id="textoAlarma" style="color: rgb(109, 17, 17)">APAGADO</h1>
+ <script>
+    //creamos variables y asignamos identificadores
+    //para poder extraer datos de type="numer" y <h1>
+        let elementoSegundos = document.getElementById("tiempoElegido");
+        let elementotextoAlarma = document.getElementById("textoAlarma");
+        function comenzarTiempo(){
+            //ahora en el segundo parametro de settimeout extraemos 
+            // el contenido de la variable elementoSegundo 
+            setTimeout(tiempoCumplido,1000*elementoSegundos.value);
+           
+        }
+        function tiempoCumplido() {
+           elementotextoAlarma.textContent="ENCENDIDO";
+           elementotextoAlarma.style.color="green";
+         }
+
+ </script>
+    
+</body>
+</html>
